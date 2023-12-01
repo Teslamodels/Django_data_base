@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for post in onbject_list %}
+
+        <div style="text-align: center; font-family: sans-serif; color: steelblue;">
+            <h2><a href="{% url 'detail' post.pk %}">{{ post.Title }}</a></h2>
+        </div>
+
+    {% endfor %}
+
+{% endblock content %}
