@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Base</title>
+</head>
+<body>
+    <div style="text-align: center; font-family: sans-serif; color: gray;">
+        <header>
+            <h1><a href="{% url 'home' %}">Menu</a></h1>
+            <h2><a href="{% url 'create' %}">Post</a></h2>
+        </header>
+    </div>
+
+    <div style="text-align: center; font-family: sans-serif;">
+        {% if user.is_authenticated %}
+            <p>Welcome {{ user.username }}</p>
+            <a href="{% url 'logout' %}" >Log out</a>
+        {% else %}
+            <a href="{% url 'login' %}">Log in</a>
+            <a href="{% url 'signup' %}">Sign up</a>
+        {% endif %}
+    </div>
+
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

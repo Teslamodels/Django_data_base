@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div style="text-align: center; font-family: sans-serif; color: steelblue;"
+    >
+        <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Edit">
+
+        </form>
+    </div>
+    
+{% endblock content %}
